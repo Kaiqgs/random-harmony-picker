@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Bootstrap demo</title>
+    <link href="../public/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <section
+      class="d-flex flex-column justify-content-center align-items-center"
+    >
+      <h1>Hello randomer</h1>
+      <div
+        class="d-flex flex-row justify-content-center align-items-center m-4"
+      >
+        <div
+          class="d-flex flex-column justify-content-center align-items-center"
+            
+          id="selected-group"
+        >
+          <h3>duh chosen</h3>
+          <span id="selected-item"></span>
+          <button type="button" class="btn btn-secondary" onclick="next()">Next</button>
+          <button type="button" class="btn btn-danger m-5" onclick="shuffle()">Shuffle</button>
+        </div>
+        <ol id="items-list"></ol>
+      </div>
+    </section>
+    <script src="../public/jquery.js"></script>
+    <script src="../public/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="./main.js"></script>
+  </body>
+</html>
