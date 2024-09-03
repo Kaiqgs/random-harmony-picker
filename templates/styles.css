@@ -3,9 +3,26 @@
 }
 
 #selected-group {
-  width: 30em;
 }
 
 #item-list {
-  width: 30em;
+}
+
+#welcome-message {
+    margin: 0% 0% 10% 0%;
+}
+
+body {
+    background: rgb(238,174,202);
+    background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+}
+button {
+
+    box-shadow: 0px 0px 10px 1px rgba(0, 0, 0, 0.5);
+}
+
+#main-section {
+    background-color: rgba(75, 75, 75, 0.5); 
+    box-shadow: 0px 0px 10px 10px rgba(0, 0, 0, 0.5);
+    text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.5);
 }

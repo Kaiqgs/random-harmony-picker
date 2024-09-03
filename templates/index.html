@@ -1,31 +1,40 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" class="h-100">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Bootstrap demo</title>
+    <title>Random Harmony</title>
     <link href="../public/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="../public/music_icon.png" />
   </head>
-  <body>
+  <body class="h-100 d-flex justify-content-center">
     <section
-      class="d-flex flex-column justify-content-center align-items-center"
+      id="main-section"
+      class="d-flex flex-column justify-content-center align-items-center text-white h-100 w-75 rounded"
     >
-      <h1>Hello randomer</h1>
-      <div
-        class="d-flex flex-row justify-content-center align-items-center m-4"
-      >
-        <div
-          class="d-flex flex-column justify-content-center align-items-center"
-            
-          id="selected-group"
-        >
-          <h3>duh chosen</h3>
-          <span id="selected-item"></span>
-          <button type="button" class="btn btn-secondary" onclick="next()">Next</button>
-          <button type="button" class="btn btn-danger m-5" onclick="shuffle()">Shuffle</button>
+      <h1 id="welcome-message">Hello randomaster practicioner!</h1>
+      <div class="container">
+        <div class="row">
+          <div
+            class="d-flex flex-column justify-content-center align-items-center col"
+            id="selected-group"
+          >
+            <h3>here you go:</h3>
+            <span id="selected-item"></span>
+            <button type="button" class="btn btn-secondary" onclick="next()">
+              Next
+            </button>
+            <button
+              type="button"
+              class="btn btn-danger m-5"
+              onclick="shuffle()"
+            >
+              Shuffle
+            </button>
+          </div>
+          <ol id="items-list" class="col-2"></ol>
         </div>
-        <ol id="items-list"></ol>
       </div>
     </section>
     <script src="../public/jquery.js"></script>
