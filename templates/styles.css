@@ -1,11 +1,14 @@
 #selected-item {
-  font-size: 96px;
+  font-size: 2rem;
 }
 
 #selected-group {
 }
 
-#item-list {
+#items-list {
+    height: 20rem;
+    width: 100%;
+    overflow: scroll;
 }
 
 #welcome-message {
