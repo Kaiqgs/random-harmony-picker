@@ -8,38 +8,72 @@
     <link rel="stylesheet" href="styles.css" />
     <link rel="icon" href="../public/music_icon.png" />
   </head>
-  <body class="h-100 d-flex justify-content-center">
+  <body class="h-100 d-flex justify-content-center align-items-center p-3">
     <section
       id="main-section"
-      class="d-flex flex-column justify-content-center align-items-center text-white h-100 w-75 rounded"
+      class="d-flex flex-column justify-content-center align-items-center text-white w-100 rounded p-4"
     >
-      <h1 id="welcome-message">Hello randomaster practicioner!</h1>
-      <div class="container">
-        <div class="row">
+      <div class="position-absolute top-0 end-0 p-3">
+        <button type="button" class="btn btn-outline-light" data-bs-toggle="modal" data-bs-target="#settingsModal">
+          ⚙️
+        </button>
+      </div>
+      <h1 id="welcome-message" class="text-center mb-4 fs-2 fs-md-1">Olá praticante aleatório!</h1>
+      <div class="container-fluid">
+        <div class="row justify-content-center" style="max-width: 1200px; margin: 0 auto;">
           <div
-            class="d-flex flex-column justify-content-center align-items-center col"
+            class="d-flex flex-column justify-content-center align-items-center col-12 col-lg-8 mb-4"
             id="selected-group"
           >
-            <h3>here you go:</h3>
-            <span id="selected-item"></span>
-            <button type="button" class="btn btn-secondary" onclick="next()">
-              Next
-            </button>
-            <button
-              type="button"
-              class="btn btn-danger m-5"
-              onclick="shuffle()"
-            >
-              Shuffle
-            </button>
+            <h3 class="text-center mb-3">aqui está:</h3>
+            <div id="selected-item" class="mb-4 text-center fs-3" style="min-height: 80px; min-width: 300px;"></div>
+            <div class="d-flex flex-column gap-3 w-100 w-md-75">
+              <button type="button" class="btn btn-secondary btn-lg w-100" onclick="next()">
+                Próximo
+              </button>
+              <button
+                type="button"
+                class="btn btn-danger btn-lg w-100"
+                onclick="shuffle()"
+              >
+                Embaralhar
+              </button>
+            </div>
           </div>
-          <ol
-            id="items-list"
-            class="col-2 d-flex flex-column justify-content-center align-items-center"
-          ></ol>
+          <div class="col-12 col-lg-4">
+            <ol
+              id="items-list"
+              class="list-group list-group-numbered overflow-auto fs-5"
+              style="max-height: 60vh; min-width: 250px;"
+            ></ol>
+          </div>
         </div>
       </div>
     </section>
+
+    <!-- Settings Modal -->
+    <div class="modal fade" id="settingsModal" tabindex="-1" aria-labelledby="settingsModalLabel" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="settingsModalLabel">Configurações</h5>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body">
+            <div class="mb-3">
+              <label for="baseOptionsInput" class="form-label">Opções Personalizadas</label>
+              <textarea class="form-control" id="baseOptionsInput" rows="10" placeholder="Digite suas opções personalizadas, uma por linha"></textarea>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-danger" onclick="clearSettings()">Restaurar Padrão</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Fechar</button>
+            <button type="button" class="btn btn-primary" onclick="saveSettings()">Salvar</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
     <script src="../public/jquery.js"></script>
     <script src="../public/bootstrap/js/bootstrap.bundle.min.js"></script>
     <script src="./main.js"></script>
